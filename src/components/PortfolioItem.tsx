@@ -39,7 +39,7 @@ export default function Portfolio() {
       </motion.h1>
 
       <p className="text-lg text-gray-300 text-center mt-4 max-w-3xl mx-auto">
-        Excellence isn't an option—it's the only way forward. Our projects define a standard 
+        Excellence isn&apos;t an option—it&apos;s the only way forward. Our projects define a standard 
         of digital mastery, engineered for those who demand power, precision, and prestige.
       </p>
 
