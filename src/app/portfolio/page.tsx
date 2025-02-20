@@ -14,7 +14,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-white flex flex-col items-center px-6 py-16 overflow-hidden">
+    <main className="min-h-screen bg-[#0A0A0A] text-white flex flex-col items-center px-6 py-32 overflow-hidden">
       {/* Heading */}
       <motion.h1 
         initial={{ opacity: 0, y: -20 }}
