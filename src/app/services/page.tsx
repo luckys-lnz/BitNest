@@ -97,7 +97,7 @@ export default function Services() {
         transition={{ delay: 0.5, duration: 0.8 }}
       >
         <p className="text-xl text-[#A0A0A0]">
-          Ready to take your business to the next level? Let's build something <span className="text-[#D4AF37] font-semibold">extraordinary</span>.
+          Ready to take your business to the next level? Let&apos;s build something <span className="text-[#D4AF37] font-semibold">extraordinary</span>.
         </p>
         <a
           href="/contact"
