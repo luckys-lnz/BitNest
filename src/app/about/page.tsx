@@ -7,7 +7,7 @@ export default function About() {
   return (
     <main className="min-h-screen bg-[#0A0A0A] text-white flex flex-col items-center overflow-hidden">
       {/* Hero Section */}
-      <section className="w-full max-w-7xl text-center py-24">
+      <section className="w-full max-w-7xl text-center py-32">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }} 
@@ -46,7 +46,7 @@ export default function About() {
           transition={{ duration: 1 }}
           className="md:w-1/2 flex justify-center mt-6 md:mt-0"
         >
-          {/* <Image src="/about.png" width={400} height={300} alt="About Us" className="rounded-lg shadow-2xl" /> */}
+          <Image src="/logo.png" width={400} height={300} alt="About Us" className="rounded-lg shadow-2xl" />
         </motion.div>
       </section>
 
