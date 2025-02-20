@@ -42,7 +42,7 @@ const services = [
 
 export default function Services() {
   return (
-    <main className="relative min-h-screen bg-[#0A0A0A] text-white flex flex-col items-center px-6 py-16 overflow-hidden">
+    <main className="relative min-h-screen bg-[#0A0A0A] text-white flex flex-col items-center px-6 py-32 overflow-hidden">
       {/* Section Header */}
       <motion.h1
         className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#B22222] glow text-center"
