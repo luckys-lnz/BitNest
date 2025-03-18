@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from 'next/link'
+
 
 const phrases = [
   "Design Your Imaginations",
@@ -64,25 +66,30 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          ARCH & SONS
+          ARCH Tech
         </motion.h1>
 
         {/* Typing Subtext Animation */}
-        <p className="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl h-8">
+        <p className="mt-4 text-lg md:text-4xl text-gray-400 max-w-2xl h-9">
           {text}
           <span className="animate-blink">|</span>
         </p>
 
         {/* Call to Action Button */}
-        <motion.button
-          className="mt-6 px-8 py-3 text-lg font-semibold rounded-full border border-yellow-400 text-yellow-300 bg-transparent transition-all duration-300 hover:bg-yellow-400 hover:text-black drop-shadow-[0_0_15px_rgba(255,215,0,0.7)]"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          whileHover={{ scale: 1.1 }}
+        <Link
+          href="/contact"
         >
-          Launch Now
-        </motion.button>
+          <motion.button
+            className="mt-20 px-8 py-3 text-lg font-semibold rounded-full border border-yellow-400 text-yellow-300 bg-transparent transition-all duration-300 hover:bg-yellow-400 hover:text-black drop-shadow-[0_0_15px_rgba(255,215,0,0.7)]"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+          >
+            Work With Me
+          </motion.button>
+        </Link>
+
       </div>
 
       {/* Floating Particles */}
