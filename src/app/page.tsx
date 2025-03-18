@@ -12,8 +12,10 @@ const services = [
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center">
-      <HeroSection />
-      
+      <section className="flex w-full">
+        <HeroSection />
+      </section>
+
       {/* Services Section */}
       <section className="w-full max-w-7xl px-6 py-12">
         <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">
@@ -26,9 +28,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PortfolioItem */}
       <section className="w-full max-w-7xl px-6 py-12 text-white">
         <PortfolioItem />
       </section>
+
+      {/* ContactForm */}
       <section className="w-full max-w-7xl px-6 py-12">
         <ContactForm />
       </section>
