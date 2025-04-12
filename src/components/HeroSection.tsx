@@ -66,7 +66,7 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          ARCH Tech
+          Arch Tech
         </motion.h1>
 
         {/* Typing Subtext Animation */}

@@ -19,7 +19,7 @@ export default function Home() {
       {/* Services Section */}
       <section className="w-full max-w-7xl px-6 py-12">
         <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">
-          Our Services
+          My Services
         </h2>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {services.map((service, index) => (
