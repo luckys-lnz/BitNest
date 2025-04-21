@@ -5,21 +5,28 @@ import Tilt from "react-parallax-tilt";
 
 const portfolioItems = [
   {
-    title: "E-Commerce Platform",
+    title: "Todo Application",
     description:
-      "An elite digital storefront, built for seamless transactions, robust security, and an unforgettable shopping experience.",
+      "A sleek and intuitive task manager to help users stay organized and boost productivity.",
   },
   {
-    title: "AI-Powered Analytics",
+    title: "Portfolio",
     description:
-      "Intelligent insights at your fingertips. A high-performance analytics suite leveraging AI to drive precision and growth.",
+      "A personal showcase of projects, skills, and experience, crafted to make a lasting impression.",
   },
   {
-    title: "Enterprise CRM",
+    title: "Luda Chat",
     description:
-      "A commanding customer management platform. Designed to streamline operations, build relationships, and scale effortlessly.",
+      "A real-time chat application designed for seamless communication with a modern UI and responsive features.",
+  },
+  {
+    title: "Currency Converter",
+    description:
+      "A fast and reliable tool to convert currencies in real-time using up-to-date exchange rates.",
   },
 ];
+
+
 
 export default function Portfolio() {
   return (
