@@ -59,7 +59,7 @@ export default function Services() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
       >
-        At <span className="text-[#D4AF37] font-semibold">Arch & Sons Tech</span>, we engineer digital experiences that inspire. Our team of experts harnesses the latest technologies to craft <span className="font-semibold">world-class</span> solutions, ensuring your business stays ahead of the competition.
+        At <span className="text-[#D4AF37] font-semibold">Archi Tech</span>, we engineer digital experiences that inspire. Our team of experts harnesses the latest technologies to craft <span className="font-semibold">world-class</span> solutions, ensuring your business stays ahead of the competition.
       </motion.p>
 
       {/* Services Grid with Animation */}
