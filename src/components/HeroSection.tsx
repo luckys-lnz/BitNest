@@ -10,8 +10,6 @@ const phrases = [
   "Crafting the Future of Technology",
   "Empowering Your Business",
   "Engineering the Digital Legacy",
-  "Innovating the Future of Software",
-  "Building Scalable, High-Performance Solutions",
   "Your Vision, Our Technology",
 ];
 
@@ -66,7 +64,7 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Arch Tech
+          Archi Tech
         </motion.h1>
 
         {/* Typing Subtext Animation */}
