@@ -15,7 +15,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 text-2xl font-bold tracking-wide">
           <Image src="/logo.png" alt="Arch & Sons Tech Logo" width={80} height={80} />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
-            Arch Tech
+            Archi Tech
           </span>
         </Link>
 
