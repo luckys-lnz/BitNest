@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,13 +17,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Arch & Sons Tech - Engineering the Digital Legacy",
-  description: "Premium software solutions by Arch & Sons Tech. Web, mobile, and desktop applications built to perfection.",
+  description:
+    "Premium software solutions by Arch & Sons Tech. Web, mobile, and desktop applications built to perfection.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+      >
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
