@@ -5,93 +5,83 @@ import Tilt from "react-parallax-tilt";
 
 const portfolioItems = [
   {
-    title: "Todo Application",
+    title: "E-Commerce Platform",
     description:
-      "A sleek and intuitive task manager to help users stay organized and boost productivity.",
+      "A high-performance digital storefront engineered for secure transactions, scalable infrastructure, and a smooth, engaging shopping experience tailored for modern consumers.",
+    stack: ["Next.js", "Stripe", "MongoDB"],
   },
   {
-    title: "Portfolio",
+    title: "AI-Powered Analytics",
     description:
-      "A personal showcase of projects, skills, and experience, crafted to make a lasting impression.",
+      "A cutting-edge analytics suite that leverages machine learning to deliver actionable insights, automate reporting, and empower data-driven decision making.",
+    stack: ["Python", "Flask", "D3.js"],
   },
   {
-    title: "Luda Chat",
+    title: "Enterprise CRM",
     description:
-      "A real-time chat application designed for seamless communication with a modern UI and responsive features.",
-  },
-  {
-    title: "Currency Converter",
-    description:
-      "A fast and reliable tool to convert currencies in real-time using up-to-date exchange rates.",
+      "A robust customer relationship management system built to optimize workflows, strengthen client relationships, and scale with enterprise-level demands.",
+    stack: ["React", "Django", "Twilio"],
   },
 ];
-
-
 
 export default function Portfolio() {
   return (
     <main className="max-w-7xl mx-auto px-6 py-16 text-white relative">
-      {/* Gold & Bronze Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#8B5A2B] via-[#FFD700] to-[#8B5A2B] opacity-10"></div>
+      {/* Subtle Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#8B5A2B] via-[#FFD700] to-[#8B5A2B] opacity-5 pointer-events-none" />
 
-      {/* Section Title */}
+      {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-5xl font-bold text-center text-transparent bg-clip-text 
-          bg-gradient-to-r from-yellow-400 to-orange-600 drop-shadow-[0_0_15px_rgba(255,215,0,0.7)]"
+        transition={{ duration: 0.8 }}
+        className="text-5xl font-bold text-center bg-clip-text text-transparent 
+        bg-gradient-to-r from-yellow-400 to-orange-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.4)]"
       >
-        Our Legacy in Code
+        <h1 className="p-2">Our Legacy in Code</h1>
       </motion.h1>
 
       <p className="text-lg text-gray-300 text-center mt-4 max-w-3xl mx-auto">
-        Excellence isn&apos;t an option—it&apos;s the only way forward. Our projects define a standard 
-        of digital mastery, engineered for those who demand power, precision, and prestige.
+        Excellence isn&apos;t an option—it&apos;s the only way forward. Our
+        projects define a standard of digital mastery, engineered for those who
+        demand power, precision, and prestige.
       </p>
 
-      {/* Portfolio Grid */}
-      <div className="mt-12 grid gap-8 md:grid-cols-3">
+      {/* Grid */}
+      <div className="mt-12 grid gap-10 md:grid-cols-3">
         {portfolioItems.map((item, index) => (
           <Tilt
             key={index}
-            glareEnable={true}
-            glareMaxOpacity={0.3}
+            glareEnable
+            glareMaxOpacity={0.2}
             glareColor="#FFD700"
-            tiltMaxAngleX={10}
-            tiltMaxAngleY={10}
           >
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="relative p-6 bg-black border border-yellow-500 
-                rounded-lg shadow-lg hover:shadow-yellow-500/50 
-                transition-transform duration-300 overflow-hidden"
+              className="relative p-6 bg-[#111] border border-yellow-500 rounded-2xl shadow-md hover:shadow-yellow-500/40 transition duration-300"
             >
-              {/* Glowing Border Effect */}
-              <div className="absolute inset-0 rounded-lg border-2 border-transparent 
-                bg-gradient-to-r from-yellow-400 to-orange-600 opacity-30 blur-lg"></div>
-
-              {/* Animated Title */}
               <motion.h3
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative text-3xl font-semibold text-transparent 
-                  bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600"
+                transition={{ delay: 0.1 }}
+                className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500"
               >
                 {item.title}
               </motion.h3>
+              <p className="mt-3 text-sm text-gray-300">{item.description}</p>
 
-              {/* Animated Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="relative mt-4 text-gray-300"
-              >
-                {item.description}
-              </motion.p>
+              {/* Tech Stack */}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {item.stack.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-yellow-600/20 border border-yellow-400/40 px-2 py-1 rounded-full text-yellow-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </Tilt>
         ))}
