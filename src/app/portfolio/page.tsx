@@ -1,144 +1,210 @@
 "use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
-import { Github, ExternalLink } from "lucide-react";
-import Button from "@/components/Button";
 
-const projects = [
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Link from "next/link";
+import { ExternalLinkIcon, ArrowLeftIcon } from "@/components/Icons";
+
+interface PortfolioItemProps {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  techStack: string[];
+  category: string;
+  stats?: {
+    revenue?: string;
+    users?: string;
+    performance?: string;
+  };
+}
+
+const portfolioItems: PortfolioItemProps[] = [
   {
-    title: "Todo Application",
-    description: "A sleek and intuitive task manager to help users stay organized and boost productivity.",
-    image: "/images/todo.png",
-    codeUrl: "https://github.com/yourusername/todo-app",
-    previewUrl: "https://todo.yoursite.com",
+    title: "E-Commerce Platform",
+    description: "A high-performance e-commerce platform with advanced search, filtering, and payment integration. Built with modern technologies to handle high traffic and complex transactions.",
+    image: "/portfolio/ecommerce.jpg",
+    link: "https://example.com/ecommerce",
+    techStack: ["React", "Node.js", "MongoDB", "Stripe", "Redis", "AWS"],
+    category: "Web Development",
+    stats: {
+      revenue: "$2M+",
+      users: "50K+",
+      performance: "99.9%"
+    }
   },
   {
-    title: "Portfolio",
-    description: "A personal showcase of projects, skills, and experience, crafted to make a lasting impression.",
-    image: "/images/portfolio.png",
-    codeUrl: "https://github.com/yourusername/portfolio",
-    previewUrl: "https://yourportfolio.com",
+    title: "Healthcare Management System",
+    description: "A comprehensive healthcare management system for clinics and hospitals. Features include patient records, appointment scheduling, and telemedicine capabilities.",
+    image: "/portfolio/healthcare.jpg",
+    link: "https://example.com/healthcare",
+    techStack: ["Vue.js", "Python", "PostgreSQL", "AWS", "Docker", "Kubernetes"],
+    category: "Enterprise Solutions",
+    stats: {
+      users: "10K+",
+      performance: "99.99%"
+    }
   },
   {
-    title: "Luda Chat MVP",
-    description: "A real-time chat application designed for seamless communication with a modern UI and responsive features.",
-    image: "/images/luda-chat.png",
-    codeUrl: "https://github.com/yourusername/luda-chat",
-    previewUrl: "https://chat.luda.com",
+    title: "Financial Analytics Dashboard",
+    description: "Real-time financial analytics and reporting platform for investment firms. Provides advanced data visualization and predictive analytics capabilities.",
+    image: "/portfolio/finance.jpg",
+    link: "https://example.com/finance",
+    techStack: ["Angular", "TypeScript", "D3.js", "Firebase", "TensorFlow", "Python"],
+    category: "Data Analytics",
+    stats: {
+      revenue: "$1.5M+",
+      users: "5K+"
+    }
   },
   {
-    title: "Currency Converter",
-    description: "A fast and reliable tool to convert currencies in real-time using up-to-date exchange rates.",
-    image: "/images/currency-converter.png",
-    codeUrl: "https://github.com/yourusername/currency-converter",
-    previewUrl: "https://converter.yoursite.com",
-  },
+    title: "Education Platform",
+    description: "An interactive learning platform with video courses and progress tracking. Features include live classes, assignments, and certification programs.",
+    image: "/portfolio/education.jpg",
+    link: "https://example.com/education",
+    techStack: ["Next.js", "GraphQL", "MongoDB", "Cloudinary", "WebRTC", "Stripe"],
+    category: "EdTech",
+    stats: {
+      users: "100K+",
+      performance: "99.95%"
+    }
+  }
 ];
 
-export default function Portfolio() {
+const categories = ["All", "Web Development", "Enterprise Solutions", "Data Analytics", "EdTech"];
+
+export default function PortfolioPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<PortfolioItemProps | null>(null);
+
+  const filteredProjects = selectedCategory === "All" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === selectedCategory);
+
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-white flex flex-col items-center px-6 py-32 overflow-hidden">
-      {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#B22222] glow text-center"
-      >
-        Our Portfolio
-      </motion.h1>
+    <main className="min-h-screen bg-[#0A0A0A] py-20">
+      <div className="container mx-auto px-4">
+        {/* Back Button */}
+        <Link 
+          href="/"
+          className="inline-flex items-center text-gray-400 hover:text-yellow-400 transition-colors mb-8"
+        >
+          <ArrowLeftIcon className="w-5 h-5 mr-2" />
+          Back to Home
+        </Link>
 
-      {/* Subtext */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="mt-4 text-lg text-[#A0A0A0] max-w-3xl text-center"
-      >
-        At <span className="text-[#D4AF37] font-semibold">Archi Tech</span>, we
-        engineer digital experiences that push the boundaries of innovation.
-        Here are some of our latest projects, each crafted with precision,
-        expertise, and an unwavering commitment to excellence.
-      </motion.p>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600 mb-6">
+            Our Portfolio
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Discover our diverse range of projects and see how we've helped businesses transform their digital presence.
+          </p>
+        </motion.div>
 
-      {/* Projects Grid */}
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full max-w-7xl">
-        {projects.map((project, index) => (
-          <Tilt
-            key={index}
-            glareEnable={true}
-            glareMaxOpacity={0.4}
-            scale={1.05}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative overflow-hidden rounded-xl shadow-xl border border-[#D4AF37] bg-gradient-to-br from-[#D4AF37] to-[#B22222] hover:scale-105 transition-transform"
+        {/* Category Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-4 mb-16"
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                selectedCategory === category
+                  ? "bg-yellow-400 text-black"
+                  : "bg-[#1A1A1A] text-gray-400 hover:bg-[#2A2A2A]"
+              }`}
             >
-              <div className="bg-[#0A0A0A] rounded-xl overflow-hidden flex flex-col h-full relative">
-                {/* Internal Glow (Box Shadow) */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-600 opacity-30 pointer-events-none transition-all duration-300 ease-in-out hover:opacity-50"></div>
+              {category}
+            </button>
+          ))}
+        </motion.div>
 
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={400}  // Further reduced width for smaller cards
-                  height={300} // Reduced height for consistency
-                  className="w-full h-48 object-cover rounded-t-xl" // Adjusted height for the image
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-400/20 transition-shadow duration-300"
+            >
+              <div className="relative h-64">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
                 />
-                <div className="p-4 flex flex-col justify-between flex-grow"> {/* Reduced padding */}
-                  <div>
-                    <h3 className="text-2xl font-semibold text-[#D4AF37]">
-                      {project.title}
-                    </h3>
-                    <p className="mt-4 text-[#A0A0A0] text-base">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Buttons */}
-                  <div className="mt-4 flex gap-3">
-                    {/* View Code Button */}
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Button
-                        label={
-                          <>
-                            <Github className="text-lg" /> View Code
-                          </>
-                        }
-                        onClick={() => window.open(project.codeUrl, "_blank")}
-                        className="bg-[#D4AF37] text-black font-semibold px-4 py-2 rounded-md flex items-center gap-2 hover:opacity-90 transition"
-                      />
-                    </motion.div>
-
-                    {/* Preview Site Button */}
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Button
-                        label={
-                          <>
-                            <ExternalLink className="text-lg" /> Live Preview
-                          </>
-                        }
-                        onClick={() => window.open(project.previewUrl, "_blank")}
-                        className="bg-[#B22222] text-white font-semibold px-4 py-2 rounded-md flex items-center gap-2 hover:opacity-90 transition"
-                      />
-                    </motion.div>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <span className="inline-block px-3 py-1 text-sm bg-yellow-400 text-black rounded-full mb-2">
+                    {item.category}
+                  </span>
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
                 </div>
               </div>
+              
+              <div className="p-6">
+                <p className="text-gray-400 mb-4 line-clamp-2">{item.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {item.techStack.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 text-sm bg-[#2A2A2A] text-yellow-400 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {item.stats && (
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    {item.stats.revenue && (
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-yellow-400">{item.stats.revenue}</div>
+                        <div className="text-sm text-gray-400">Revenue</div>
+                      </div>
+                    )}
+                    {item.stats.users && (
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-yellow-400">{item.stats.users}</div>
+                        <div className="text-sm text-gray-400">Users</div>
+                      </div>
+                    )}
+                    {item.stats.performance && (
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-yellow-400">{item.stats.performance}</div>
+                        <div className="text-sm text-gray-400">Uptime</div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition-colors w-full justify-center"
+                >
+                  View Project
+                  <ExternalLinkIcon className="w-4 h-4 ml-2" />
+                </Link>
+              </div>
             </motion.div>
-          </Tilt>
-        ))}
+          ))}
+        </div>
       </div>
     </main>
   );
