@@ -28,3 +28,59 @@ body {
   color: var(--text-primary);
 }
 
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-scroll {
+  animation: scroll 2s infinite;
+}
+
+/* Enhanced Button Styles */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Client Logo Container */
+.client-logo {
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.client-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Responsive Text Sizes */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
