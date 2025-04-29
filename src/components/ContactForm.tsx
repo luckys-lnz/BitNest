@@ -7,6 +7,24 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import * as THREE from "three";
 
+/**
+ * ContactForm Component
+ * 
+ * A modern, interactive contact form with a 3D Earth visualization.
+ * Features:
+ * - Animated 3D Earth model with realistic textures
+ * - Form validation and submission handling
+ * - Responsive design with mobile support
+ * - Loading and success states
+ * - Interactive animations using Framer Motion
+ */
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 // Custom Earth Component
 function Earth() {
   const earthTexture = useLoader(THREE.TextureLoader, "/earth0.jpg");
