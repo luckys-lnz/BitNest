@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 20 Q30 10, 50 20 T90 20" stroke="#FFCC00" stroke-width="2" fill="none"/>
+  <path d="M10 25 Q30 15, 50 25 T90 25" stroke="#FFCC00" stroke-width="2" fill="none"/>
+  <path d="M10 30 Q30 20, 50 30 T90 30" stroke="#FFCC00" stroke-width="2" fill="none"/>
+  <text x="100" y="25" font-family="Arial" font-size="16" fill="#FFCC00">DigitalFlow</text>
+</svg> 
