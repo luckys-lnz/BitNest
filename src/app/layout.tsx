@@ -16,9 +16,72 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arch & Sons Tech - Engineering the Digital Legacy",
-  description:
-    "Premium software solutions by Arch & Sons Tech. Web, mobile, and desktop applications built to perfection.",
+  title: {
+    default: "Archi Tech - Engineering the Digital Legacy",
+    template: "%s | Archi Tech"
+  },
+  description: "Premium software solutions by Archi Tech. Specializing in web, mobile, and desktop applications built with cutting-edge technology and precision engineering.",
+  keywords: ["software development", "web applications", "mobile apps", "desktop software", "custom software", "tech solutions", "digital transformation"],
+  authors: [{ name: "Archi Tech" }],
+  creator: "Archi Tech",
+  publisher: "Archi Tech",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://archi-teck.vercel.app/'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Archi Tech - Engineering the Digital Legacy",
+    description: "Premium software solutions by Archi Tech. Specializing in web, mobile, and desktop applications built with cutting-edge technology and precision engineering.",
+    url: 'https://archi-teck.vercel.app/',
+    siteName: 'Archi Tech',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Archi Tech - Engineering the Digital Legacy',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Archi Tech - Engineering the Digital Legacy",
+    description: "Premium software solutions by Archi Tech. Specializing in web, mobile, and desktop applications built with cutting-edge technology and precision engineering.",
+    images: ['/twitter-image.jpg'],
+    creator: '@architech',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: '00000000000000000000000000000000',
+    yandex: '00000000000000000000000000000000',
+    yahoo: '00000000000000000000000000000000',
+  },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +93,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        suppressHydrationWarning
       >
         <Navbar />
         <main className="flex-grow">{children}</main>
