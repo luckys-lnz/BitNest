@@ -70,11 +70,6 @@ export default function Portfolio() {
   return (
     <section className="py-20 bg-[#0A0A0A]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600 mb-4">Our Portfolio</h2>
-          <p className="text-gray-400">Explore our recent projects and see how we've helped businesses transform their digital presence.</p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((item, index) => (
             <motion.div
