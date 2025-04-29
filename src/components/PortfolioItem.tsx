@@ -1,91 +1,166 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
+import { ReactNode } from "react";
+import Link from "next/link";
+import { ExternalLinkIcon, ArrowRightIcon } from "@/components/Icons";
 
-const portfolioItems = [
+interface PortfolioItemProps {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  techStack: string[];
+  stats?: {
+    revenue?: string;
+    users?: string;
+    performance?: string;
+  };
+}
+
+const portfolioItems: PortfolioItemProps[] = [
   {
     title: "E-Commerce Platform",
-    description:
-      "A high-performance digital storefront engineered for secure transactions, scalable infrastructure, and a smooth, engaging shopping experience tailored for modern consumers.",
-    stack: ["Next.js", "Stripe", "MongoDB"],
+    description: "A high-performance e-commerce platform with advanced search, filtering, and payment integration.",
+    image: "/portfolio/ecommerce.jpg",
+    link: "https://example.com/ecommerce",
+    techStack: ["React", "Node.js", "MongoDB", "Stripe"],
+    stats: {
+      revenue: "$2M+",
+      users: "50K+",
+      performance: "99.9%"
+    }
   },
   {
-    title: "AI-Powered Analytics",
-    description:
-      "A cutting-edge analytics suite that leverages machine learning to deliver actionable insights, automate reporting, and empower data-driven decision making.",
-    stack: ["Python", "Flask", "D3.js"],
+    title: "Healthcare Management System",
+    description: "A comprehensive healthcare management system for clinics and hospitals.",
+    image: "/portfolio/healthcare.jpg",
+    link: "https://example.com/healthcare",
+    techStack: ["Vue.js", "Python", "PostgreSQL", "AWS"],
+    stats: {
+      users: "10K+",
+      performance: "99.99%"
+    }
   },
   {
-    title: "Enterprise CRM",
-    description:
-      "A robust customer relationship management system built to optimize workflows, strengthen client relationships, and scale with enterprise-level demands.",
-    stack: ["React", "Django", "Twilio"],
+    title: "Financial Analytics Dashboard",
+    description: "Real-time financial analytics and reporting platform for investment firms.",
+    image: "/portfolio/finance.jpg",
+    link: "https://example.com/finance",
+    techStack: ["Angular", "TypeScript", "D3.js", "Firebase"],
+    stats: {
+      revenue: "$1.5M+",
+      users: "5K+"
+    }
   },
+  {
+    title: "Education Platform",
+    description: "An interactive learning platform with video courses and progress tracking.",
+    image: "/portfolio/education.jpg",
+    link: "https://example.com/education",
+    techStack: ["Next.js", "GraphQL", "MongoDB", "Cloudinary"],
+    stats: {
+      users: "100K+",
+      performance: "99.95%"
+    }
+  }
 ];
 
 export default function Portfolio() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-16 text-white relative">
-      {/* Subtle Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#8B5A2B] via-[#FFD700] to-[#8B5A2B] opacity-5 pointer-events-none" />
+    <section className="py-20 bg-[#0A0A0A]">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600 mb-4">Our Portfolio</h2>
+          <p className="text-gray-400">Explore our recent projects and see how we've helped businesses transform their digital presence.</p>
+        </div>
 
-      {/* Title */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-5xl font-bold text-center bg-clip-text text-transparent 
-        bg-gradient-to-r from-yellow-400 to-orange-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.4)]"
-      >
-        <h1 className="p-2">Our Legacy in Code</h1>
-      </motion.h1>
-
-      <p className="text-lg text-gray-300 text-center mt-4 max-w-3xl mx-auto">
-        Excellence isn&apos;t an option—it&apos;s the only way forward. Our
-        projects define a standard of digital mastery, engineered for those who
-        demand power, precision, and prestige.
-      </p>
-
-      {/* Grid */}
-      <div className="mt-12 grid gap-10 md:grid-cols-3">
-        {portfolioItems.map((item, index) => (
-          <Tilt
-            key={index}
-            glareEnable
-            glareMaxOpacity={0.2}
-            glareColor="#FFD700"
-          >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {portfolioItems.map((item, index) => (
             <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="relative p-6 bg-[#111] border border-yellow-500 rounded-2xl shadow-md hover:shadow-yellow-500/40 transition duration-300"
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg"
             >
-              <motion.h3
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500"
-              >
-                {item.title}
-              </motion.h3>
-              <p className="mt-3 text-sm text-gray-300">{item.description}</p>
+              <div className="relative h-48">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-gray-400 mb-4">{item.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {item.techStack.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 text-sm bg-[#2A2A2A] text-yellow-400 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              {/* Tech Stack */}
-              <div className="mt-4 flex flex-wrap gap-2">
-                {item.stack.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="text-xs bg-yellow-600/20 border border-yellow-400/40 px-2 py-1 rounded-full text-yellow-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {item.stats && (
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    {item.stats.revenue && (
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-yellow-400">{item.stats.revenue}</div>
+                        <div className="text-sm text-gray-400">Revenue</div>
+                      </div>
+                    )}
+                    {item.stats.users && (
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-yellow-400">{item.stats.users}</div>
+                        <div className="text-sm text-gray-400">Users</div>
+                      </div>
+                    )}
+                    {item.stats.performance && (
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-yellow-400">{item.stats.performance}</div>
+                        <div className="text-sm text-gray-400">Uptime</div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition-colors"
+                >
+                  View Project
+                  <ExternalLinkIcon className="w-4 h-4 ml-2" />
+                </Link>
               </div>
             </motion.div>
-          </Tilt>
-        ))}
+          ))}
+        </div>
+
+        {/* View All Projects Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-16"
+        >
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center px-8 py-4 text-lg font-semibold text-black bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg shadow-lg hover:shadow-yellow-400/50 hover:scale-105 transition-all duration-300"
+          >
+            View All Projects
+            <ArrowRightIcon className="w-5 h-5 ml-2" />
+          </Link>
+        </motion.div>
       </div>
-    </main>
+    </section>
   );
 }
