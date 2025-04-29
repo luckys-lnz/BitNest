@@ -1,4 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Archi-Tech
+
+A modern, interactive portfolio website built with Next.js, featuring 3D visualizations and dynamic components. This portfolio showcases my expertise in modern web development, 3D graphics, and interactive user experiences.
+
+## About
+
+Archi-Tech is a personal portfolio project that demonstrates advanced web development techniques and creative design. The project combines cutting-edge technologies to create an immersive and engaging user experience, highlighting my skills in:
+
+- Full-stack web development
+- 3D graphics and visualization
+- Interactive UI/UX design
+- Modern web technologies
+- Performance optimization
+
+## Features
+
+- **Interactive 3D Contact Form**: A stunning contact form with a 3D Earth visualization
+  - Realistic Earth model with texture mapping
+  - Interactive orbit controls
+  - Dynamic lighting and post-processing effects
+  - Responsive design with mobile support
+  - Form validation and submission handling
+  - Animated feedback states
+
+- **Modern Tech Stack**
+  - Next.js 14 with App Router
+  - Three.js for 3D graphics
+  - Framer Motion for animations
+  - Tailwind CSS for styling
+  - TypeScript for type safety
 
 ## Getting Started
 
@@ -16,21 +45,28 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/components/`: Reusable React components
+  - `ContactForm.tsx`: Interactive 3D contact form with Earth visualization
+  - Other components...
+
+- `src/app/`: Next.js app router pages
+- `public/`: Static assets including textures and images
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Three.js Documentation](https://threejs.org/docs/)
+- [Framer Motion Documentation](https://www.framer.com/motion/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Copyright Notice
 
-## Deploy on Vercel
+© 2024 [Your Name]. All rights reserved.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This portfolio website and its contents are the intellectual property of [luckys-lnz](http://www.archi-teck.vercel.app). The design, code, and content are protected by copyright laws. Unauthorized use, reproduction, or distribution of any part of this portfolio is strictly prohibited without prior written permission.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For inquiries about using any part of this portfolio, please contact me through the contact form or send an email to [luckys-lns](mailto:luckyarchibong000@gmail.com).
