@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://archi-teck.vercel.app/'),
+  metadataBase: new URL('https://archi-tech-eight.vercel.app/'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Archi Tech - Engineering the Digital Legacy",
     description: "Premium software solutions by Archi Tech. Specializing in web, mobile, and desktop applications built with cutting-edge technology and precision engineering.",
-    url: 'https://archi-teck.vercel.app/',
+    url: 'https://archi-tech-eight.vercel.app/',
     siteName: 'Archi Tech',
     images: [
       {
