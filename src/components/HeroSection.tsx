@@ -7,11 +7,9 @@ import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 
 const phrases = [
-  "Design Your Imaginations",
-  "Crafting the Future of Technology",
-  "Empowering Your Business",
-  "Engineering the Digital Legacy",
-  "Your Vision, Our Technology",
+  "Create Beautiful Websites Using Cutting-Edge Technology",
+  "Design Engaging User Experiences That Drive Results",
+  "Build Scalable Applications That Grow With Your Business",
 ];
 
 const clients = [
@@ -85,31 +83,22 @@ export default function HeroSection() {
           className="space-y-8"
         >
           <motion.h1 
-            className="text-6xl md:text-9xl font-bold uppercase tracking-wide text-yellow-400 drop-shadow-[0_0_25px_rgba(255,215,0,0.9)]"
+            className="text-3xl md:text-6xl font-bold uppercase tracking-wide text-yellow-400 drop-shadow-[0_0_25px_rgba(255,215,0,0.9)]"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Archi Tech
+            Building Exceptional Websites and Interfaces That Inspire Confidence
           </motion.h1>
-          
-          <motion.p 
-            className="text-2xl md:text-4xl text-gray-300 max-w-3xl mx-auto"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            Transforming ideas into digital excellence
-          </motion.p>
 
           {/* Typing Subtext Animation */}
           <motion.p 
-            className="mt-4 text-xl md:text-3xl text-gray-400 max-w-2xl mx-auto h-12"
+            className="mt-4 text-xl md:text-3xl text-gray-400 max-w-2xl mx-auto h-12 uppercase font-semibold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            {text}
+            We Will {text}
             <span className="animate-blink">|</span>
           </motion.p>
 
