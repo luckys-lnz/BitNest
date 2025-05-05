@@ -1,4 +1,4 @@
-# Archi-Tech
+# BitNest
 
 A modern, interactive portfolio website built with Next.js, featuring 3D visualizations and dynamic components. This portfolio showcases my expertise in modern web development, 3D graphics, and interactive user experiences.
 
@@ -67,6 +67,6 @@ To learn more about the technologies used in this project:
 
 © 2024 [Your Name]. All rights reserved.
 
-This portfolio website and its contents are the intellectual property of ([archi-tech](https://archi-tech-eight.vercel.app/)). The design, code, and content are protected by copyright laws. Unauthorized use, reproduction, or distribution of any part of this portfolio is strictly prohibited without prior written permission.
+This portfolio website and its contents are the intellectual property of ([BitNest](https://archi-tech-eight.vercel.app/)). The design, code, and content are protected by copyright laws. Unauthorized use, reproduction, or distribution of any part of this portfolio is strictly prohibited without prior written permission.
 
 For inquiries about using any part of this portfolio, please contact me through the contact form or send an email to [luckys-lnz](mailto:luckyarchibong000@gmail.com).
