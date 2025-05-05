@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -16,13 +15,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md text-white shadow-lg z-50 border-b border-yellow-500/30">
+    <header className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md text-white shadow-lg z-50 border-b border-yellow-500/30 ">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 text-2xl font-bold tracking-wide">
-          <Image src="/logo.png" alt="Arch & Sons Tech Logo" width={80} height={80} />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
-            Archi Tech
+            BitNest
           </span>
         </Link>
 
