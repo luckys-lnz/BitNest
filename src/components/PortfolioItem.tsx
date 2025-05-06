@@ -151,7 +151,7 @@ export default function Portfolio() {
             href="/portfolio"
             className="inline-flex items-center px-8 py-4 text-lg font-semibold text-black bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg shadow-lg hover:shadow-yellow-400/50 hover:scale-105 transition-all duration-300"
           >
-            View All Projects
+            Keep Exploring
             <ArrowRightIcon className="w-5 h-5 ml-2" />
           </Link>
         </motion.div>
