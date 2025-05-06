@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
-import { ReactNode } from "react";
 import Link from "next/link";
+import { ReactNode } from "react";
+import { ArrowRightIcon } from "@/components/Icons";
+import Tilt from "react-parallax-tilt";
 
 interface ServiceProps {
   title: string;
@@ -19,132 +20,106 @@ interface ServiceProps {
   };
 }
 
-export default function ServiceCard({ title, description, icon, features, price, slug, stats }: ServiceProps) {
+export default function ServiceCard({
+  title,
+  description,
+  icon,
+  features,
+  price,
+  slug,
+  stats,
+}: ServiceProps) {
   return (
-    <Link href={`/services/${slug}`} className="block">
-      <Tilt
-        glareEnable
-        glareMaxOpacity={0.3}
-        glareColor="#FFD700"
-        tiltMaxAngleX={10}
-        tiltMaxAngleY={10}
-        className="rounded-lg"
-      >
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          className="relative p-8 bg-black border border-yellow-500 rounded-lg shadow-lg hover:shadow-yellow-500/50 transition-transform duration-300 overflow-hidden h-full"
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
+      className="bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden"
+    >
+      <Tilt glareEnable={true} glareMaxOpacity={0.4} scale={1.05}>
+        <Link
+          href={`/services/${slug}`}
+          className="p-6 h-full flex flex-col justify-between"
         >
-          {/* Glowing Border Aura */}
-          <div className="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-r from-yellow-400 to-orange-600 opacity-30 blur-lg pointer-events-none" />
+          {/* Icon */}
+          <div className="w-12 h-12 text-yellow-400 mb-4">{icon}</div>
 
-          {/* Content */}
-          <div className="relative z-10 flex flex-col h-full">
-            {/* Icon */}
-            <div className="w-16 h-16 mb-6 text-yellow-400">
-              {icon}
+          {/* Title */}
+          <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+
+          {/* Description */}
+          <p className="text-gray-400 mb-4">{description}</p>
+
+          {/* Features */}
+          <ul className="mb-4 space-y-2">
+            {features.map((feature, index) => (
+              <li
+                key={index}
+                className="text-sm text-gray-400 flex items-center"
+              >
+                <svg
+                  className="w-4 h-4 mr-2 text-yellow-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          {/* Stats */}
+          {stats && (
+            <div className="grid grid-cols-3 gap-4 mb-4">
+              {stats.projects && (
+                <div className="text-center">
+                  <div className="text-lg font-bold text-yellow-400">
+                    {stats.projects}
+                  </div>
+                  <div className="text-sm text-gray-400">Projects</div>
+                </div>
+              )}
+              {stats.clients && (
+                <div className="text-center">
+                  <div className="text-lg font-bold text-yellow-400">
+                    {stats.clients}
+                  </div>
+                  <div className="text-sm text-gray-400">Clients</div>
+                </div>
+              )}
+              {stats.satisfaction && (
+                <div className="text-center">
+                  <div className="text-lg font-bold text-yellow-400">
+                    {stats.satisfaction}
+                  </div>
+                  <div className="text-sm text-gray-400">Satisfaction</div>
+                </div>
+              )}
             </div>
+          )}
 
-            {/* Title */}
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600"
-            >
-              {title}
-            </motion.h3>
+          {/* Price */}
+          {price && (
+            <div className="text-2xl font-bold text-yellow-400 mb-4">
+              {price}
+            </div>
+          )}
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="mt-4 text-gray-300"
-            >
-              {description}
-            </motion.p>
-
-            {/* Features */}
-            <motion.ul
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-6 space-y-2 flex-grow"
-            >
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-center text-gray-300">
-                  <svg
-                    className="w-5 h-5 mr-2 text-yellow-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  {feature}
-                </li>
-              ))}
-            </motion.ul>
-
-            {/* Stats */}
-            {stats && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="mt-6 grid grid-cols-3 gap-4 text-center"
-              >
-                <div className="p-2 bg-black/50 rounded-lg border border-yellow-500/20">
-                  <div className="text-xl font-bold text-yellow-400">{stats.projects}</div>
-                  <div className="text-xs text-gray-400">Projects</div>
-                </div>
-                <div className="p-2 bg-black/50 rounded-lg border border-yellow-500/20">
-                  <div className="text-xl font-bold text-yellow-400">{stats.clients}</div>
-                  <div className="text-xs text-gray-400">Clients</div>
-                </div>
-                <div className="p-2 bg-black/50 rounded-lg border border-yellow-500/20">
-                  <div className="text-xl font-bold text-yellow-400">{stats.satisfaction}</div>
-                  <div className="text-xs text-gray-400">Satisfaction</div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* Price */}
-            {price && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="mt-6 text-2xl font-bold text-yellow-400"
-              >
-                {price}
-              </motion.div>
-            )}
-
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-8"
-            >
-              <button 
-                type="button"
-                className="w-full px-6 py-3 text-lg font-semibold rounded-full border border-yellow-400 text-yellow-300 bg-transparent transition-all duration-300 hover:bg-yellow-400 hover:text-black drop-shadow-[0_0_15px_rgba(255,215,0,0.7)]"
-              >
-                Learn More
-              </button>
-            </motion.div>
+          {/* CTA */}
+          <div>
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition-colors text-sm font-medium">
+              Learn More
+              <ArrowRightIcon className="w-4 h-4 ml-2" />
+            </div>
           </div>
-        </motion.div>
+        </Link>
       </Tilt>
-    </Link>
+    </motion.div>
   );
 }
