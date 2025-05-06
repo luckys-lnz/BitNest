@@ -14,7 +14,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#B22222] glow"
         >
-          About Archi Tech
+          About BitNest
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }} 
@@ -36,7 +36,7 @@ export default function About() {
         >
           <h2 className="text-4xl font-semibold text-[#D4AF37]">Our Story</h2>
           <p className="mt-4 text-[#A0A0A0] text-lg">
-            Founded with the vision of building world-class digital experiences, Archi Tech specializes in web,
+            Founded with the vision of building world-class digital experiences, BitNest specializes in web,
             mobile, and desktop applications. We combine innovation with precision to craft cutting-edge solutions.
           </p>
         </motion.div>
