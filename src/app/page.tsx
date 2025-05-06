@@ -13,55 +13,73 @@ const services: {
   price: string;
   slug: string;
 }[] = [
-    {
-      title: "Web Development",
-      description: "Crafting high-performance, scalable web applications with modern technologies and best practices.",
-      icon: <CodeIcon />,
-      features: [
-        "Custom Web Applications",
-        "E-commerce Solutions",
-        "API Development",
-        "Progressive Web Apps",
-        "Performance Optimization"
-      ],
-      price: "Starting at $2,500",
-      slug: "web-development"
-    },
-    {
-      title: "Mobile Apps",
-      description: "Developing seamless mobile experiences for iOS and Android with native and cross-platform solutions.",
-      icon: <MobileIcon />,
-      features: [
-        "iOS & Android Development",
-        "Cross-platform Apps",
-        "Push Notifications",
-        "Offline Capabilities",
-        "App Store Optimization"
-      ],
-      price: "Starting at $3,500",
-      slug: "mobile-apps"
-    },
-    {
-      title: "Desktop Applications",
-      description: "Building robust desktop software for businesses with modern frameworks and security features.",
-      icon: <DesktopIcon />,
-      features: [
-        "Windows & macOS Apps",
-        "Electron Applications",
-        "System Integration",
-        "Data Security",
-        "Auto-updates"
-      ],
-      price: "Starting at $4,000",
-      slug: "desktop-applications"
-    }
-  ];
+  {
+    title: "Web Development",
+    description:
+      "Crafting high-performance, scalable web applications with modern technologies and best practices.",
+    icon: <CodeIcon />,
+    features: [
+      "Custom Web Applications",
+      "E-commerce Solutions",
+      "API Development",
+      "Progressive Web Apps",
+      "Performance Optimization",
+    ],
+    price: "Starting at $2,500",
+    slug: "web-development",
+  },
+  {
+    title: "Mobile Apps",
+    description:
+      "Developing seamless mobile experiences for iOS and Android with native and cross-platform solutions.",
+    icon: <MobileIcon />,
+    features: [
+      "iOS & Android Development",
+      "Cross-platform Apps",
+      "Push Notifications",
+      "Offline Capabilities",
+      "App Store Optimization",
+    ],
+    price: "Starting at $3,500",
+    slug: "mobile-apps",
+  },
+  {
+    title: "Desktop Applications",
+    description:
+      "Building robust desktop software for businesses with modern frameworks and security features.",
+    icon: <DesktopIcon />,
+    features: [
+      "Windows & macOS Apps",
+      "Electron Applications",
+      "System Integration",
+      "Data Security",
+      "Auto-updates",
+    ],
+    price: "Starting at $4,000",
+    slug: "desktop-applications",
+  },
+];
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center">
       <section className="flex w-full">
         <HeroSection />
+      </section>
+
+      {/* PortfolioItem */}
+      <section className="w-full max-w-7xl px-6 py-20">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600 mb-4">
+            Our Projects
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Explore our recent projects and see how we've helped businesses
+            transform their digital presence.
+          </p>
+        </div>
+
+        <PortfolioItem />
       </section>
 
       {/* Services Section */}
@@ -89,20 +107,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PortfolioItem */}
-      <section className="w-full max-w-7xl px-6 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600 mb-4">
-            Our Portfolio
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Explore our recent projects and see how we've helped businesses transform their digital presence.
-          </p>
-        </div>
-
-        <PortfolioItem />
-      </section>
-
       {/* ContactForm */}
 
       <section className="w-full max-w-7xl px-6 py-20">
@@ -111,6 +115,6 @@ export default function Home() {
         </h2> */}
         <ContactForm />
       </section>
-    </main >
+    </main>
   );
 }
