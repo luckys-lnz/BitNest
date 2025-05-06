@@ -47,7 +47,7 @@ export default function Footer() {
         {/* Copyright */}
         <p className="mt-6 text-sm opacity-75">
           © {new Date().getFullYear()}{" "}
-          <span className="font-semibold text-yellow-500">Archi Tech</span>. All
+          <span className="font-semibold text-yellow-500">BitNest</span>. All
           rights reserved.
         </p>
       </div>
