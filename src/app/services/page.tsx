@@ -26,8 +26,8 @@ const services = [
     ],
     slug: "web-development",
     stats: {
-      projects: "100+",
-      clients: "50+",
+      projects: "15+",
+      clients: "8+",
       satisfaction: "98%"
     }
   },
@@ -49,9 +49,9 @@ const services = [
     ],
     slug: "mobile-development",
     stats: {
-      projects: "75+",
-      clients: "35+",
-      satisfaction: "97%"
+      projects: "3+",
+      clients: "2+",
+      satisfaction: "94%"
     }
   },
   {
@@ -73,9 +73,9 @@ const services = [
     ],
     slug: "desktop-solutions",
     stats: {
-      projects: "50+",
-      clients: "25+",
-      satisfaction: "99%"
+      projects: "8+",
+      clients: "5+",
+      satisfaction: "94%"
     }
   },
 ];
@@ -114,7 +114,7 @@ export default function Services() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          At <span className="text-[#D4AF37] font-semibold">Archi Tech</span>, we engineer digital experiences that inspire. Our team of experts harnesses the latest technologies to craft <span className="font-semibold">world-class</span> solutions, ensuring your business stays ahead of the competition.
+          At <span className="text-[#D4AF37] font-semibold">BitNest</span>, we engineer digital experiences that inspire. Our team of experts harnesses the latest technologies to craft <span className="font-semibold">world-class</span> solutions, ensuring your business stays ahead of the competition.
         </motion.p>
       </motion.div>
 
@@ -159,11 +159,11 @@ export default function Services() {
         transition={{ delay: 0.6, duration: 0.8 }}
       >
         <div className="text-center p-6 bg-black/50 rounded-lg border border-yellow-500/20">
-          <div className="text-4xl font-bold text-yellow-400">200+</div>
+          <div className="text-4xl font-bold text-yellow-400">15+</div>
           <div className="text-gray-400 mt-2">Projects Completed</div>
         </div>
         <div className="text-center p-6 bg-black/50 rounded-lg border border-yellow-500/20">
-          <div className="text-4xl font-bold text-yellow-400">100+</div>
+          <div className="text-4xl font-bold text-yellow-400">14+</div>
           <div className="text-gray-400 mt-2">Happy Clients</div>
         </div>
         <div className="text-center p-6 bg-black/50 rounded-lg border border-yellow-500/20">
@@ -186,7 +186,7 @@ export default function Services() {
           href="/contact"
           className="inline-block mt-6 px-8 py-4 text-lg font-semibold text-black bg-gradient-to-r from-[#D4AF37] to-[#B22222] rounded-lg shadow-lg transition duration-300 hover:shadow-[#D4AF37]/50 hover:scale-105"
         >
-          Get Started Today
+          Get Started Now
         </a>
       </motion.div>
     </main>
