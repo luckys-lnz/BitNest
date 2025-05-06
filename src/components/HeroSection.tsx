@@ -112,7 +112,7 @@ export default function HeroSection() {
                 transition={{ delay: 0.9, duration: 0.5 }}
                 whileHover={{ scale: 1.1, boxShadow: "0 0 25px rgba(255,215,0,0.5)" }}
               >
-                Start Your Project
+                Say Hello
               </motion.button>
             </Link>
             <Link href="/portfolio">
@@ -123,7 +123,7 @@ export default function HeroSection() {
                 transition={{ delay: 1.1, duration: 0.5 }}
                 whileHover={{ scale: 1.1, boxShadow: "0 0 25px rgba(255,215,0,0.5)" }}
               >
-                View Our Work
+                Explore Projects
               </motion.button>
             </Link>
           </div>
