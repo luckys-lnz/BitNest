@@ -7,18 +7,6 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import * as THREE from "three";
 
-/**
- * ContactForm Component
- * 
- * A modern, interactive contact form with a 3D Earth visualization.
- * Features:
- * - Animated 3D Earth model with realistic textures
- * - Form validation and submission handling
- * - Responsive design with mobile support
- * - Loading and success states
- * - Interactive animations using Framer Motion
- */
-
 interface FormData {
   name: string;
   email: string;
@@ -50,7 +38,7 @@ function Earth() {
         roughness={0.3}
         metalness={0.1}
         emissive="#000000"
-        emissiveIntensity={0.1}
+        emissiveIntensity={0.5}
       />
     </mesh>
   );
@@ -111,7 +99,7 @@ export default function ContactForm() {
               <OrbitControls 
                 enableZoom={false} 
                 autoRotate 
-                autoRotateSpeed={0.3}
+                autoRotateSpeed={2.0}
                 minPolarAngle={Math.PI / 3}
                 maxPolarAngle={Math.PI / 2.5}
                 enablePan={false}
