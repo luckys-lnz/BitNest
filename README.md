@@ -1,16 +1,16 @@
 # BitNest
 
-A modern, interactive portfolio website built with Next.js, featuring 3D visualizations and dynamic components. This portfolio showcases my expertise in modern web development, 3D graphics, and interactive user experiences.
+A modern, interactive portfolio website built with Next.js, featuring 3d visualisations and dynamic components. This portfolio showcases my expertise in modern web development, 3d graphics, and interactive user experiences.
 
 ## About
 
 Archi-Tech is a personal portfolio project that demonstrates advanced web development techniques and creative design. The project combines cutting-edge technologies to create an immersive and engaging user experience, highlighting my skills in:
 
 - Full-stack web development
-- 3D graphics and visualization
+- 3d graphics and visualisation
 - Interactive UI/UX design
 - Modern web technologies
-- Performance optimization
+- Performance optimisation
 
 ## Features
 
@@ -24,7 +24,7 @@ Archi-Tech is a personal portfolio project that demonstrates advanced web develo
 
 - **Modern Tech Stack**
   - Next.js 14 with App Router
-  - Three.js for 3D graphics
+  - Three.js for 3d graphics
   - Framer Motion for animations
   - Tailwind CSS for styling
   - TypeScript for type safety
@@ -48,7 +48,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Project Structure
 
 - `src/components/`: Reusable React components
-  - `ContactForm.tsx`: Interactive 3D contact form with Earth visualization
+  - `ContactForm.tsx`: Interactive 3d contact form with Earth visualisation
   - Other components...
 
 - `src/app/`: Next.js app router pages
@@ -65,8 +65,8 @@ To learn more about the technologies used in this project:
 
 ## Copyright Notice
 
-© 2024 [Your Name]. All rights reserved.
+© 2024 luckys-lnz. All rights reserved.
 
-This portfolio website and its contents are the intellectual property of ([BitNest](https://archi-tech-eight.vercel.app/)). The design, code, and content are protected by copyright laws. Unauthorized use, reproduction, or distribution of any part of this portfolio is strictly prohibited without prior written permission.
+This portfolio website and its contents are the intellectual property of ([BitNest](https://archi-tech-eight.vercel.app/)). The design, code, and content are protected by copyright laws. Unauthorised use, reproduction, or distribution of any part of this portfolio is strictly prohibited without prior written permission.
 
 For inquiries about using any part of this portfolio, please contact me through the contact form or send an email to [luckys-lnz](mailto:luckyarchibong000@gmail.com).
